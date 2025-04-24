@@ -1,0 +1,13 @@
+.header {
+  background: rgba(255, 255, 255, 1);
+  height: 80px;
+  padding: 2em;
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+}
