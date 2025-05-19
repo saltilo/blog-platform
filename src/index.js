@@ -4,9 +4,10 @@ import App from "./App";
 import "./index.css";
 import "antd/dist/antd.css";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
+import { AuthProvider } from "./context/AuthContext";
+
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <AuthProvider>
     <App />
-  </React.StrictMode>
+  </AuthProvider>
 );

@@ -1,13 +1,57 @@
 .header {
-  background: rgba(255, 255, 255, 1);
-  height: 80px;
-  padding: 2em;
+  padding: 16px 48px;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
-h6 {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
-  letter-spacing: 0%;
-  vertical-align: middle;
+.logo {
+  font-weight: bold;
+  font-size: 20px;
+  color: #1890ff;
+  text-decoration: none;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-green {
+  border: 1px solid #52c41a;
+  background: none;
+  color: #52c41a;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-dark {
+  border: 1px solid #000;
+  background: none;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
 }
