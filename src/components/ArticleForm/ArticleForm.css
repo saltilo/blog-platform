@@ -1,0 +1,52 @@
+.article-form {
+  background: #fff;
+  padding: 32px;
+  max-width: 720px;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.article-form input,
+.article-form textarea {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+textarea {
+  min-height: 140px;
+}
+
+.tags-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tag-item {
+  display: flex;
+  gap: 8px;
+}
+
+.tag-item button,
+.tag-add button,
+.submit-button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tag-add {
+  display: flex;
+  gap: 8px;
+}
+
+.submit-button {
+  background-color: #1890ff;
+  color: white;
+  border: none;
+}

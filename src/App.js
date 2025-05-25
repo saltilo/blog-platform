@@ -7,6 +7,8 @@ import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Header from "./components/Header/Header";
 import { Layout } from "antd";
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import NewArticlePage from "./pages/NewArticlePage/NewArticlePage";
+import EditArticlePage from "./pages/EditArticlePage/EditArticlePage";
 
 const { Content } = Layout;
 
@@ -27,8 +29,24 @@ const App = () => (
           <Route path="/" element={<ArticlesPage />} />
           <Route path="/articles" element={<ArticlesPage />} />
           <Route path="/articles/:slug" element={<ArticlePage />} />
+          <Route
+            path="/articles/:slug/edit"
+            element={
+              <PrivateRoute>
+                <EditArticlePage />
+              </PrivateRoute>
+            }
+          />
           <Route path="/sign-in" element={<SignInPage />} />
           <Route path="/sign-up" element={<SignUpPage />} />
+          <Route
+            path="/new-article"
+            element={
+              <PrivateRoute>
+                <NewArticlePage />
+              </PrivateRoute>
+            }
+          />
         </Routes>
       </Content>
     </Layout>
