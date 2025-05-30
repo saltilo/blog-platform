@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useForm, useFieldArray } from "react-hook-form";
 import "./ArticleForm.css";
 
-const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Send" }) => {
+const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Save" }) => {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,6 @@ const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Send" }) => {
       title: "",
       description: "",
       body: "",
-      tagList: [""],
       ...initialValues,
     },
   });
@@ -24,20 +23,11 @@ const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Send" }) => {
     name: "tagList",
   });
 
-  const [tagInput, setTagInput] = useState("");
-
   useEffect(() => {
     if (initialValues.tagList) {
       setValue("tagList", initialValues.tagList);
     }
   }, [initialValues, setValue]);
-
-  const handleAddTag = () => {
-    if (tagInput.trim()) {
-      append(tagInput.trim());
-      setTagInput("");
-    }
-  };
 
   return (
     <form className="article-form" onSubmit={handleSubmit(onSubmit)}>
@@ -75,29 +65,29 @@ const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Send" }) => {
       </label>
 
       <label>Tags</label>
+
       <div className="tags-wrapper">
-        {fields.map((tag, index) => (
-          <div key={tag.id} className="tag-item">
-            <input
-              {...register(`tagList.${index}`)}
-              defaultValue={tag}
-              placeholder="Tag"
-            />
-            <button type="button" onClick={() => remove(index)}>
-              Delete
-            </button>
+        {fields.map((field, index) => (
+          <div key={field.id} className="tag-item">
+            <input {...register(`tagList.${index}`)} placeholder="Tag" />
+            <div className="tag-buttons">
+              <button
+                type="button"
+                className="delete-btn"
+                onClick={() => remove(index)}>
+                Delete
+              </button>
+              {index === fields.length - 1 && (
+                <button
+                  type="button"
+                  className="add-tag-btn"
+                  onClick={() => append("")}>
+                  Add tag
+                </button>
+              )}
+            </div>
           </div>
         ))}
-        <div className="tag-add">
-          <input
-            value={tagInput}
-            onChange={(e) => setTagInput(e.target.value)}
-            placeholder="Tag"
-          />
-          <button type="button" onClick={handleAddTag}>
-            Add tag
-          </button>
-        </div>
       </div>
 
       <button className="submit-button" type="submit">

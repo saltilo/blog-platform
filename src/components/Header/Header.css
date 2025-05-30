@@ -20,9 +20,9 @@
 }
 
 .btn-green {
-  border: 1px solid #52c41a;
+  border: 1px solid rgba(82, 196, 26, 1);
   background: none;
-  color: #52c41a;
+  color: rgba(82, 196, 26, 1);
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: 500;
@@ -46,6 +46,7 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: rgba(0, 0, 0, 0.85);
 }
 
 .avatar {

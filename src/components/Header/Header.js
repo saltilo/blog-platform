@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import "./Header.css";
@@ -31,13 +30,13 @@ const Header = () => {
             <Link to="/new-article" className="btn-green">
               Create article
             </Link>
-            <div className="user-info" onClick={() => navigate("/profile")}>
+            <Link to="/profile" className="user-info">
               <span>{user.username}</span>
               {user.image && (
                 <img src={user.image} alt="avatar" className="avatar" />
               )}
-            </div>
-            <button onClick={handleLogout} className="btn-dark">
+            </Link>
+            <button type="button" onClick={handleLogout} className="btn-dark">
               Log Out
             </button>
           </>

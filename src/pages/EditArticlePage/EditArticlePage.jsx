@@ -20,7 +20,7 @@ const EditArticlePage = () => {
       try {
         const data = await getArticle(slug);
 
-        if (data.article.author.username !== user.username) {
+        if (!user || data.article.author.username !== user.username) {
           setError("You are not the author of this article.");
           return;
         }
@@ -34,17 +34,17 @@ const EditArticlePage = () => {
     load();
   }, [slug, user.username]);
 
-  const handleSubmit = async (data) => {
+  const handleSubmit = async ({ title, description, body, tagList }) => {
     try {
       const articleData = {
-        title: data.title,
-        description: data.description,
-        body: data.body,
-        tagList: data.tagList.filter((t) => t.trim() !== ""),
+        title,
+        description,
+        body,
+        tagList: tagList.filter((t) => t.trim()),
       };
 
-      const res = await updateArticle(slug, articleData, token);
-      navigate(`/articles/${res.article.slug}`);
+      const { article } = await updateArticle(slug, articleData, token);
+      navigate(`/articles/${article.slug}`);
     } catch (err) {
       console.error(err);
       alert("Failed to update article.");

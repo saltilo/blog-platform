@@ -41,6 +41,7 @@
 
 .error {
   color: red;
-  font-size: 12px;
-  margin-top: -12px;
+  font-size: 14px;
+  font-weight: 400;
+  margin-top: 0.5em;
 }

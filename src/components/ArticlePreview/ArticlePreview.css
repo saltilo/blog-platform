@@ -1,74 +1,81 @@
 .preview-card {
   background: white;
   border-radius: 6px;
-  padding: 16px 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 20px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .preview-header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  gap: 20px;
 }
 
-.title-likes {
+.left-block {
+  flex: 1;
+}
+
+.title-row {
   display: flex;
-  gap: 16px;
   align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
 }
 
 .preview-title {
   font-size: 20px;
+  font-weight: 600;
   color: #1890ff;
-  font-weight: bold;
   text-decoration: none;
 }
 
-.preview-title:hover {
-  text-decoration: underline;
-}
-
 .likes {
-  color: #444;
-  font-size: 16px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-weight: 500;
 }
 
 .preview-tags {
   display: flex;
   gap: 8px;
-  flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .tag {
-  background: #f3f3f3;
-  color: #555;
-  padding: 2px 8px;
+  padding: 4px 8px;
+  border: 1px solid #d9d9d9;
   border-radius: 4px;
   font-size: 12px;
-  border: 1px solid #dcdcdc;
+  color: #595959;
 }
 
 .preview-description {
-  margin-top: 8px;
+  color: #333;
   font-size: 14px;
-  color: #444;
+  line-height: 1.5;
 }
 
-.preview-footer {
+.right-block {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 16px;
+  gap: 6px;
+  text-align: right;
 }
 
 .author-info {
   display: flex;
-  gap: 4px;
+  flex-direction: column;
 }
 
 .author-name {
   font-weight: 600;
+  color: #000;
 }
 
 .date {

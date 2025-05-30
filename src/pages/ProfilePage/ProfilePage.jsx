@@ -66,7 +66,7 @@ const ProfilePage = () => {
             {...register("email", {
               required: "Email is required",
               pattern: {
-                value: /^\S+@\S+\.\S+$/,
+                value: /^https?:\/\/.+/i,
                 message: "Invalid email format",
               },
             })}

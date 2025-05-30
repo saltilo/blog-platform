@@ -27,7 +27,7 @@ const App = () => (
             }
           />
           <Route path="/" element={<ArticlesPage />} />
-          <Route path="/articles" element={<ArticlesPage />} />
+
           <Route path="/articles/:slug" element={<ArticlePage />} />
           <Route
             path="/articles/:slug/edit"

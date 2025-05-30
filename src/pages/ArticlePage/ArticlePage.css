@@ -8,61 +8,71 @@
 .article-page {
   background: white;
   padding: 32px;
-
   max-width: 960px;
   width: 100%;
-  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .article-top {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  margin-bottom: 16px;
+  gap: 24px;
 }
 
-.left-block {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+.top-left {
+  flex: 1;
 }
 
-.right-block {
+.title-like {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-bottom: 8px;
 }
 
 .article-title {
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 28px;
-  letter-spacing: 0%;
-  vertical-align: middle;
-  color: rgba(24, 144, 255, 1);
+  font-size: 22px;
+  font-weight: 600;
+  color: #1890ff;
 }
 
-.likes {
-  color: rgba(0, 0, 0, 0.75);
-  font-size: 16px;
+.like-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
 }
 
-.likes svg {
-  margin-right: 0.5em;
+.like-count {
+  font-size: 14px;
+  color: #000;
 }
 
 .tags {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+  margin-bottom: 12px;
 }
 
 .tag {
   border: 1px solid #d9d9d9;
-  padding: 2px 8px;
+  padding: 4px 8px;
   border-radius: 4px;
-  font-size: 14px;
+  font-size: 12px;
   color: #595959;
+}
+
+.preview-description {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.5;
+}
+
+.top-right {
+  display: flex;
+  gap: 8px;
+  text-align: right;
 }
 
 .author-name {
@@ -75,8 +85,8 @@
 }
 
 .avatar {
-  width: 46px;
-  height: 46px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
   object-fit: cover;
 }

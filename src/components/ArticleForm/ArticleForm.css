@@ -16,7 +16,7 @@
   border-radius: 6px;
 }
 
-textarea {
+.article-form textarea {
   min-height: 140px;
 }
 
@@ -29,24 +29,44 @@ textarea {
 
 .tag-item {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
   gap: 8px;
 }
 
-.tag-item button,
-.tag-add button,
-.submit-button {
-  padding: 6px 12px;
+.tag-item input {
+  flex: 1;
+}
+
+.tag-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.delete-btn {
+  border: 1px solid #f5222d;
+  background: white;
+  color: #f5222d;
+  padding: 6px 16px;
   border-radius: 6px;
   cursor: pointer;
 }
 
-.tag-add {
-  display: flex;
-  gap: 8px;
+.add-tag-btn {
+  border: 1px solid #1890ff;
+  background: white;
+  color: #1890ff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .submit-button {
   background-color: #1890ff;
   color: white;
   border: none;
+  padding: 10px;
+  width: 400px;
+  border-radius: 6px;
+  cursor: pointer;
 }
