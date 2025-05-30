@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 import ArticleForm from "../../components/ArticleForm/ArticleForm";
@@ -7,6 +7,16 @@ import { createArticle } from "../../services/articles";
 const NewArticlePage = () => {
   const { token } = useAuth();
   const navigate = useNavigate();
+
+  const initialValues = useMemo(
+    () => ({
+      title: "",
+      description: "",
+      body: "",
+      tagList: [""],
+    }),
+    []
+  );
 
   const handleSubmit = async (data) => {
     try {
@@ -27,7 +37,13 @@ const NewArticlePage = () => {
     }
   };
 
-  return <ArticleForm onSubmit={handleSubmit} buttonText="Send" />;
+  return (
+    <ArticleForm
+      onSubmit={handleSubmit}
+      buttonText="Send"
+      initialValues={initialValues}
+    />
+  );
 };
 
 export default NewArticlePage;

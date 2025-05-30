@@ -7,14 +7,14 @@ const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Save" }) => {
     register,
     handleSubmit,
     control,
-    setValue,
+    reset,
     formState: { errors },
   } = useForm({
     defaultValues: {
       title: "",
       description: "",
       body: "",
-      ...initialValues,
+      tagList: [""],
     },
   });
 
@@ -24,10 +24,16 @@ const ArticleForm = ({ onSubmit, initialValues = {}, buttonText = "Save" }) => {
   });
 
   useEffect(() => {
-    if (initialValues.tagList) {
-      setValue("tagList", initialValues.tagList);
-    }
-  }, [initialValues, setValue]);
+    reset({
+      title: initialValues.title || "",
+      description: initialValues.description || "",
+      body: initialValues.body || "",
+      tagList:
+        Array.isArray(initialValues.tagList) && initialValues.tagList.length
+          ? initialValues.tagList
+          : [""],
+    });
+  }, [initialValues, reset]);
 
   return (
     <form className="article-form" onSubmit={handleSubmit(onSubmit)}>
