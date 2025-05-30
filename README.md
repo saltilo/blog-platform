@@ -1,1 +1,1 @@
-[Realworld Blog](https://blog-platform-eight-beta.vercel.app/new-article)
+[Realworld Blog](https://blog-platform-eight-beta.vercel.app)
